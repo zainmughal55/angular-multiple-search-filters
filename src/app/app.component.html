@@ -1,0 +1,14 @@
+<label for="name">Name </label>
+<input type="text" id="name" [formControl]="name"/>
+<label for="cat">Category </label>
+<input type="text" id="cat" [formControl]="category"/>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+  </tr>
+  <tr *ngFor="let item of array | search: [name.value, category.value]: ['name', 'catName'] ;">
+    <td>{{item.name}}</td>
+    <td>{{item.catName}}</td>
+  </tr>
+</table>
